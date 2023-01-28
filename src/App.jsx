@@ -47,7 +47,7 @@ function App() {
     ));
   return (
     <div className="App">
-      <h1>App</h1>
+      <h1>Fetch</h1>
       <form className="main-form" onSubmit={handleSubmit}>
         {/* full name label & input */}
         <div>
