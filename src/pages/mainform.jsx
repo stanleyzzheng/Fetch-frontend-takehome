@@ -1,10 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { redirect, useNavigate } from "react-router-dom";
 
 function MainForm() {
   const [occupations, setOccupations] = useState([]);
   const [states, setStates] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -14,24 +16,7 @@ function MainForm() {
         setStates(res.data.states);
       });
   });
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    const state = document.getElementById("state").value;
-    const occupation = document.getElementById("occupation").value;
-    const result = {
-      name: name,
-      email: email,
-      password: password,
-      state: state,
-      occupation: occupation,
-    };
-    axios
-      .post("https://frontend-take-home.fetchrewards.com/form", result)
-      .then((res) => console.log(res));
-  };
+
   const mapOccupations = () =>
     occupations.map((job, index) => (
       <option value={job} key={index}>
@@ -45,6 +30,28 @@ function MainForm() {
         {state.name}
       </option>
     ));
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const state = document.getElementById("state").value;
+    const occupation = document.getElementById("occupation").value;
+    const result = {
+      name: name,
+      email: email,
+      password: password,
+      state: state,
+      occupation: occupation,
+    };
+    const res = await axios.post(
+      "https://frontend-take-home.fetchrewards.com/form",
+      result
+    );
+    // console.log(res);
+    if (res.status === 201) navigate("/success");
+  };
+
   return (
     <>
       <h1>Fetch</h1>
