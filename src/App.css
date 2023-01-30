@@ -37,10 +37,10 @@ body {
   border-radius: 8px;
   border: none;
   font-size: 1.8rem;
-  /* height: 3.2rem; */
   padding: 1.2rem;
   width: 100%;
 }
+
 .form-input:focus {
   outline: none;
   box-shadow: 0 0 0 0.8rem rgba(183, 112, 255, 0.1);
