@@ -46,40 +46,49 @@ function MainForm() {
       </option>
     ));
   return (
-    <form className="main-form" onSubmit={handleSubmit}>
-      {/* full name label & input */}
-      <div>
-        <label htmlFor="name">Full Name</label>
-        <input className="form-input" type="text" id="name" required />
-      </div>
-      {/* email label & input */}
-      <div>
-        <label htmlFor="email">Email</label>
-        <input className="form-input" type="email" id="email" required />
-      </div>
-      {/* password  label & input */}
-      <div>
-        <label htmlFor="password">Password</label>
-        <input className="form-input" type="password" id="password" required />
-      </div>
-      {/* occupation label & input */}
-      <div>
-        <label htmlFor="occupation">Occupation</label>
-        <select className="form-input" id="occupation" required>
-          <option value="">Please Select</option>
-          {mapOccupations()}
-        </select>
-      </div>
-      {/* state label & input */}
-      <div>
-        <label htmlFor="state">State</label>
-        <select className="form-input" id="state" required>
-          <option value="">Please Select</option>
-          {mapStates()}
-        </select>
-      </div>
-      <button className="sign-up-btn">Submit</button>
-    </form>
+    <>
+      <h1>Fetch</h1>
+
+      <form className="main-form" onSubmit={handleSubmit}>
+        {/* full name label & input */}
+        <div>
+          <label htmlFor="name">Full Name</label>
+          <input className="form-input" type="text" id="name" required />
+        </div>
+        {/* email label & input */}
+        <div>
+          <label htmlFor="email">Email</label>
+          <input className="form-input" type="email" id="email" required />
+        </div>
+        {/* password  label & input */}
+        <div>
+          <label htmlFor="password">Password</label>
+          <input
+            className="form-input"
+            type="password"
+            id="password"
+            required
+          />
+        </div>
+        {/* occupation label & input */}
+        <div>
+          <label htmlFor="occupation">Occupation</label>
+          <select className="form-input" id="occupation" required>
+            <option value="">Please Select</option>
+            {mapOccupations()}
+          </select>
+        </div>
+        {/* state label & input */}
+        <div>
+          <label htmlFor="state">State</label>
+          <select className="form-input" id="state" required>
+            <option value="">Please Select</option>
+            {mapStates()}
+          </select>
+        </div>
+        <button className="sign-up-btn">Submit</button>
+      </form>
+    </>
   );
 }
 
