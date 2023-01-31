@@ -1,3 +1,12 @@
+/* 
+colors: 
+rgb(58, 42, 83);
+font color: rgba(255, 255, 255, 0.87);
+
+background-color: #242424;
+
+fonts: dosis, sans-serif
+*/
 * {
   box-sizing: border-box;
 }
@@ -7,12 +16,16 @@ html {
 body {
   font-size: 1.6rem;
 }
+
+/* h1 {
+  color: rgb(58, 42, 83);
+} */
 .App {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  margin-top: 10rem;
+  margin-top: 16rem;
 }
 .main-form {
   /* background-color: #eb984e; */
@@ -44,9 +57,10 @@ body {
 
 .form-input:focus {
   outline: none;
-  box-shadow: 0 0 0 0.8rem rgba(183, 112, 255, 0.1);
+  box-shadow: 0 0 0 0.8rem rgba(58, 42, 83, 0.25);
+  /* box-shadow: 0 0 0 0.8rem rgba(183, 112, 255, 0.1); */
 }
-.sign-up-btn {
+.btn {
   /* width: 12rem; */
   align-self: flex-end;
   border-radius: 8px;
@@ -59,6 +73,7 @@ body {
   cursor: pointer;
   transition: all 0.25s;
 }
-.sign-up-btn:hover {
+.btn:hover {
+  /* background-color: rgba(183, 112, 255, 0.1); */
   background-color: rgb(58, 42, 83);
 }

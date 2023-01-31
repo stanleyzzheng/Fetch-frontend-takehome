@@ -1,9 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
-function MainForm(props) {
+function MainForm() {
   const [occupations, setOccupations] = useState([]);
   const [states, setStates] = useState([]);
   const navigate = useNavigate();
@@ -48,10 +48,8 @@ function MainForm(props) {
       "https://frontend-take-home.fetchrewards.com/form",
       result
     );
-    // console.log(res);
     if (res.status === 201) {
-      props.setId(res.data.id);
-      navigate("/success");
+      navigate("/success", { state: { id: res.data.id } });
     }
   };
 
@@ -96,7 +94,7 @@ function MainForm(props) {
             {mapStates()}
           </select>
         </div>
-        <button className="sign-up-btn">Submit</button>
+        <button className="btn">Submit</button>
       </form>
     </>
   );

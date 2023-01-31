@@ -1,13 +1,29 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
-function SuccessPage(props) {
+function SuccessPage() {
   const navigate = useNavigate();
+  const { state } = useLocation();
+
   useEffect(() => {
-    if (!props.id) navigate("/");
-  });
-  return <div>id: {props.id}</div>;
+    if (!state) navigate("/");
+  }, []);
+
+  const handleButton = () => {
+    navigate("/");
+  };
+  return state ? (
+    <div>
+      <h1>Success!</h1>
+      <p>id: {state.id}</p>
+      <button className="btn" onClick={handleButton}>
+        Go back
+      </button>
+    </div>
+  ) : (
+    ""
+  );
 }
 
 export default SuccessPage;
