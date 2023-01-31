@@ -6,20 +6,24 @@ import {
   RouterProvider,
   redirect,
 } from "react-router-dom";
+import { useState } from "react";
 
 // import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 // const mainPageLayout = () => <Outlet />;
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <MainForm />,
-  },
-  {
-    path: "/success",
-    element: <SuccessPage />,
-  },
-]);
+
 function App() {
+  const [id, setId] = useState(null);
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <MainForm setId={setId} />,
+    },
+    {
+      path: "success",
+      element: <SuccessPage id={id} />,
+    },
+  ]);
+
   return (
     <div className="App">
       <RouterProvider router={router} />

@@ -1,9 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function MainForm() {
+function MainForm(props) {
   const [occupations, setOccupations] = useState([]);
   const [states, setStates] = useState([]);
   const navigate = useNavigate();
@@ -49,7 +49,10 @@ function MainForm() {
       result
     );
     // console.log(res);
-    if (res.status === 201) navigate("/success");
+    if (res.status === 201) {
+      props.setId(res.data.id);
+      navigate("/success");
+    }
   };
 
   return (
