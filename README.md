@@ -2,8 +2,8 @@
 This is a frontend application built using Vite, CSS, HTML, React, and other frontend technologies. It is hosted at https://stanley-fetch-frontend.netlify.app/
 
 ## Prerequisites
-- Node.js installed on your machine
-- npm (Node Package Manager) installed on your machine
+- Node.js installed on your machine: https://nodejs.dev/en/learn/how-to-install-nodejs/
+- npm (Node Package Manager) installed on your machine: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 
 ## Getting Started
 1. Clone the repository to your local machine using the following command:
